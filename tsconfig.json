@@ -24,6 +24,7 @@
       "@/*": ["./src/*"]
     },
   },
+  "files": ["auto-imports.d.ts"],
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
