@@ -3,5 +3,11 @@
     <Navbar />
 
     <AboutMe />
+
+    <hr class="mt-8 rounded"/>
+    
+    <Tecnologies />
+    
+    <hr class="mt-8 rounded"/>
   </main>
 </template>
