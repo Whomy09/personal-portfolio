@@ -1,6 +1,5 @@
 <template>
-  <main class="flex justify-center items-center w-screen h-screen bg-red-500">
-    <h1>Hello World!</h1>
-    <Button>Click me</Button>
+  <main class="mx-auto p-8 font-poppins md:max-w-3xl xl:max-w-7xl">
+    <Navbar />
   </main>
 </template>
