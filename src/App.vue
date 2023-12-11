@@ -9,5 +9,7 @@
     <Tecnologies />
     
     <hr class="mt-8 rounded"/>
+  
+    <Projects />
   </main>
 </template>
