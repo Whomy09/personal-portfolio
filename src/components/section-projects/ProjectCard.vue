@@ -25,9 +25,9 @@ defineProps({
       />
     </CardHeader>
     <CardContent class="px-4 pt-2">
-      <span class="text-[12px] font-bold">{{ title }}</span>
+      <span class="text-[12px] font-bold md:text-[14px]">{{ title }}</span>
 
-      <p class="text-[12px]">{{ description }}</p>
+      <p class="text-[12px] md:text-[14px]">{{ description }}</p>
     </CardContent>
   </Card>
 </template>

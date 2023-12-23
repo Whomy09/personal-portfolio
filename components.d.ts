@@ -30,6 +30,7 @@ declare module 'vue' {
     DropdownMenuSubContent: typeof import('./src/components/ui/dropdown-menu/DropdownMenuSubContent.vue')['default']
     DropdownMenuSubTrigger: typeof import('./src/components/ui/dropdown-menu/DropdownMenuSubTrigger.vue')['default']
     DropdownMenuTrigger: typeof import('./src/components/ui/dropdown-menu/DropdownMenuTrigger.vue')['default']
+    Footer: typeof import('./src/components/Footer.vue')['default']
     Navbar: typeof import('./src/components/Navbar.vue')['default']
     ProjectCard: typeof import('./src/components/section-projects/ProjectCard.vue')['default']
     Projects: typeof import('./src/components/section-projects/Projects.vue')['default']

@@ -8,19 +8,27 @@
           <i class="fa-solid fa-bars text-[18px]" />
         </DropdownMenuTrigger>
         <DropdownMenuContent>
-          <DropdownMenuLabel>Home</DropdownMenuLabel>
+          <DropdownMenuLabel>
+            <a href="#about-me">Home</a>
+          </DropdownMenuLabel>
           <DropdownMenuSeparator />
-          <DropdownMenuItem>Projects</DropdownMenuItem>
+          <DropdownMenuItem>
+            <a href="#projects">Projects</a>
+          </DropdownMenuItem>
           <DropdownMenuSeparator />
-          <DropdownMenuItem>Contacts</DropdownMenuItem>
+          <DropdownMenuItem>
+            <a href="#contacts">
+              Contacts
+            </a>
+          </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
     </template>
 
     <ul class="hidden md:flex gap-5 text-[18px] font-bold">
-      <li class="navbar-item">Home</li>
-      <li class="navbar-item">Projects</li>
-      <li class="navbar-item">Contacts</li>
+      <a href="#about-me" class="navbar-item">Home</a>
+      <a href="#projects" class="navbar-item">Projects</a>
+      <a href="#contacts" class="navbar-item">Contacts</a>
     </ul>
   </nav>
 </template>
