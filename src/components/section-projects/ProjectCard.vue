@@ -12,11 +12,17 @@ defineProps({
     type: String,
     required: true,
   },
+  githubLink: {
+    type: String,
+    required: true,
+  },
 });
 </script>
 
 <template>
-  <Card class="cursor-pointer hover:scale-[1.01] transition ease-in-out duration-300">
+  <Card
+    class="cursor-pointer hover:scale-[1.01] transition ease-in-out duration-300"
+  >
     <CardHeader class="p-0">
       <img
         :src="urlImg"
@@ -28,6 +34,14 @@ defineProps({
       <span class="text-[12px] font-bold md:text-[14px]">{{ title }}</span>
 
       <p class="text-[12px] md:text-[14px]">{{ description }}</p>
+
+      <div class="flex justify-center mt-4">
+        <a
+          :href="githubLink"
+          class="fa-brands fa-github text-[32px]"
+          target="_blank"
+        />
+      </div>
     </CardContent>
   </Card>
 </template>

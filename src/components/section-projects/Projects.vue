@@ -13,6 +13,7 @@ import { projects } from '@/constants'
         :urlImg="project.urlImg"
         :title="project.title"
         :description="project.description"
+        :github-link="project.githubLink"
       />
     </div>
   </section>
