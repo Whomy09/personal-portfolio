@@ -51,9 +51,7 @@ const posts: Post[] = [
       <router-link :to="{ name: 'home' }" class="font-bold text-[18px]">
         &lt;Jesus /&gt;
       </router-link>
-      <div class="flex gap-4">
-        <Button>New post</Button>
-      </div>
+      <PostCreateEditModal />
     </nav>
     <div class="flex flex-col gap-4 my-4">
       <PostCard v-for="post in posts" :key="post.id" :post />
