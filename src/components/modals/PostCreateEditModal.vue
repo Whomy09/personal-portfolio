@@ -1,8 +1,9 @@
 <script lang="ts" setup>
+import { Notyf } from "notyf";
 import { Post } from "@/types/post";
 import useVuelidate from "@vuelidate/core";
+import { usePost } from "@/composables/usePost";
 import { helpers, required } from "@vuelidate/validators";
-import { Notyf } from "notyf";
 
 const categories = ["JavaScript", "TypeScript", "Node.js"];
 
@@ -32,6 +33,7 @@ const post = ref<Post>({
   createdAt: new Date().toISOString(),
 });
 
+const { createPost } = usePost();
 const v$ = useVuelidate(rules, post);
 
 function addCategory() {
@@ -48,9 +50,13 @@ async function onSubmit() {
   try {
     isLoading.value = true;
 
+    await createPost(post.value);
     notyf.success("Post created successfully");
   } catch (error: any) {
-    notyf.error(error.message);
+    notyf.error({
+      message: error.message,
+      duration: 5000,
+    });
   } finally {
     isLoading.value = false;
   }
@@ -80,6 +86,7 @@ async function onSubmit() {
                 v-model:content="post.description"
                 theme="snow"
                 toolbar="minimal"
+                content-type="html"
               />
               <ValidateLabel :v$="v$.description" />
             </div>
