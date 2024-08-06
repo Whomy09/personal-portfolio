@@ -69,6 +69,7 @@ declare module 'vue' {
     SelectSeparator: typeof import('./src/components/ui/select/SelectSeparator.vue')['default']
     SelectTrigger: typeof import('./src/components/ui/select/SelectTrigger.vue')['default']
     SelectValue: typeof import('./src/components/ui/select/SelectValue.vue')['default']
+    Skeleton: typeof import('./src/components/ui/skeleton/Skeleton.vue')['default']
     Tecnologies: typeof import('./src/components/Tecnologies.vue')['default']
     TextEditor: typeof import('./src/components/TextEditor.vue')['default']
     Toast: typeof import('./src/components/ui/toast/Toast.vue')['default']

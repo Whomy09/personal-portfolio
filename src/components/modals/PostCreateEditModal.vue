@@ -5,7 +5,7 @@ import useVuelidate from "@vuelidate/core";
 import { usePost } from "@/composables/usePost";
 import { helpers, required } from "@vuelidate/validators";
 
-const categories = ["JavaScript", "TypeScript", "Node.js"];
+const categories = ["JavaScript", "TypeScript", "Node.js", "Personal"];
 
 const rules = {
   title: {
@@ -21,6 +21,8 @@ const rules = {
     ),
   },
 };
+
+const emit = defineEmits(["update"]);
 
 const notyf = new Notyf();
 
@@ -50,7 +52,7 @@ async function onSubmit() {
   try {
     isLoading.value = true;
 
-    await createPost(post.value);
+    const _post = await createPost(post.value);
 
     post.value = {
       title: "",
@@ -59,6 +61,7 @@ async function onSubmit() {
       createdAt: new Date().toISOString(),
     };
 
+    emit("update", _post);
     v$.value.$reset();
     notyf.success("Post created successfully");
   } catch (error: any) {
