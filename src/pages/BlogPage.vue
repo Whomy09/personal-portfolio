@@ -1,5 +1,7 @@
 <script setup lang="ts">
+import { useUserSession } from "@/store/useUserSession";
 import { Post } from "@/types/post";
+import { storeToRefs } from "pinia";
 
 const posts: Post[] = [
   {
@@ -43,6 +45,10 @@ const posts: Post[] = [
     categories: ["Firebase", "Authentication", "Web Development"],
   },
 ];
+
+const userSession = useUserSession();
+
+const { user } = storeToRefs(userSession);
 </script>
 
 <template>
@@ -51,7 +57,9 @@ const posts: Post[] = [
       <router-link :to="{ name: 'home' }" class="font-bold text-[18px]">
         &lt;Jesus /&gt;
       </router-link>
-      <PostCreateEditModal />
+
+      <LoginModal v-if="!user.isActive" />
+      <PostCreateEditModal v-else />
     </nav>
     <div class="flex flex-col gap-4 my-4">
       <PostCard v-for="post in posts" :key="post.id" :post />

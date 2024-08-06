@@ -51,6 +51,15 @@ async function onSubmit() {
     isLoading.value = true;
 
     await createPost(post.value);
+
+    post.value = {
+      title: "",
+      categories: [],
+      description: "",
+      createdAt: new Date().toISOString(),
+    };
+
+    v$.value.$reset();
     notyf.success("Post created successfully");
   } catch (error: any) {
     notyf.error({
@@ -136,7 +145,7 @@ async function onSubmit() {
                 class="font-bold transition duration-500 bg-green-500 text-white hover:bg-green-600 hover:text-white"
                 @click="onSubmit"
               >
-                Create
+                {{ isLoading ? "Loading..." : "Create" }}
               </Button>
             </div>
           </div>

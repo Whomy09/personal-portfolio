@@ -49,6 +49,7 @@ declare module 'vue' {
     FormMessage: typeof import('./src/components/ui/form/FormMessage.vue')['default']
     Input: typeof import('./src/components/ui/input/Input.vue')['default']
     Label: typeof import('./src/components/ui/label/Label.vue')['default']
+    LoginModal: typeof import('./src/components/modals/LoginModal.vue')['default']
     Navbar: typeof import('./src/components/Navbar.vue')['default']
     NavbarBlog: typeof import('./src/components/NavbarBlog.vue')['default']
     PostCard: typeof import('./src/components/cards/PostCard.vue')['default']
