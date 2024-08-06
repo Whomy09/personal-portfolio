@@ -17,9 +17,13 @@
           </DropdownMenuItem>
           <DropdownMenuSeparator />
           <DropdownMenuItem>
-            <a href="#contacts">
-              Contacts
-            </a>
+            <a href="#contacts"> Contacts </a>
+          </DropdownMenuItem>
+          <DropdownMenuSeparator />
+          <DropdownMenuItem>
+            <router-link :to="{ name: 'blog' }" class="navbar-item"
+              >Blog</router-link
+            >
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
@@ -29,6 +33,7 @@
       <a href="#about-me" class="navbar-item">Home</a>
       <a href="#projects" class="navbar-item">Projects</a>
       <a href="#contacts" class="navbar-item">Contacts</a>
+      <router-link :to="{ name: 'blog' }" class="navbar-item">Blog</router-link>
     </ul>
   </nav>
 </template>
