@@ -6,6 +6,8 @@ const props = defineProps<{
   post: Post;
 }>();
 
+const router = useRouter();
+
 const containerDescription = ref<HTMLDivElement | null>(null);
 
 onMounted(() => {
@@ -27,6 +29,7 @@ onMounted(() => {
   <div>
     <Card
       class="hover:cursor-pointer transform transition-transform duration-500 hover:scale-105"
+      @click="router.push({ name: 'post-detail', params: { id: post.id } })"
     >
       <CardHeader>
         <CardTitle>{{ post.title }}</CardTitle>

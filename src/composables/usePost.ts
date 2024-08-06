@@ -1,6 +1,6 @@
 import { db } from "@/servicies/firebase";
 import { Post } from "@/types/post";
-import { addDoc, collection, getDocs } from "firebase/firestore";
+import { addDoc, collection, getDoc, getDocs, doc } from "firebase/firestore";
 
 export const usePost = () => {
   const postsRef = collection(db, "posts");
@@ -21,8 +21,19 @@ export const usePost = () => {
     })) as Post[];
   }
 
+  async function getPostById(id: string) {
+    const docRef = doc(db, "posts", id);
+    const docSnap = await getDoc(docRef);
+    if (!docSnap.exists) throw new Error("Post not exist");
+    return {
+      id,
+      ...docSnap.data(),
+    } as Post;
+  }
+
   return {
     createPost,
     getAllPost,
+    getPostById
   };
 };
