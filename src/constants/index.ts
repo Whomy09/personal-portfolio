@@ -13,4 +13,11 @@ export const projects = [
       "This project is the page you are currently viewing, it is built with vue.js, typescript, tailwind, shadcn and firebase.",
     githubLink: "https://github.com/Whomy09/personal-portfolio",
   },
+  {
+    urlImg: "/my-personal-library.png",
+    title: "My Personal Library",
+    description:
+      "My first project in react, a place where I will keep my favorite books.",
+    githubLink: "https://github.com/Whomy09/my-personal-library",
+  },
 ];
